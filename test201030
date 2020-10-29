@@ -1,0 +1,16 @@
+import axios from 'axios'
+
+const webhook_url = "https://discordapp.com/api/webhooks/771321094153830448/HyLZhwEfRDWqGw8Ywx6rTajXSax71uBOOuaT6_49mi4rfsMygyAJK5sj1S4MF2RUQlLz"
+const message = {
+    content: "testです\r改行しました\r\\rで改行します"
+}
+
+console.log("Start")
+setInterval(()=>{
+    axios.post(webhook_url, message).then((msg) => {
+        console.log("送信しました")
+      }).catch((e)=>{
+        console.log("送信失敗しました")
+      })
+},5000)
+console.log("END")
